@@ -1,9 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import {Fragment} from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import Header from './Components/Header/Header';
 
 function App() {
   return (
-    <h1> Real work is comming soon!!</h1>
+    <Fragment>
+      <Header></Header>
+    </Fragment>
   );
 }
 
