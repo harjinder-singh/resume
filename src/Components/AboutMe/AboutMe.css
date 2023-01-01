@@ -35,4 +35,13 @@
         font-size: 1rem;
         text-align: justify;
     }
+
+    .bio {
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        margin-top: 1rem;
+    }
+
 }

@@ -1,0 +1,35 @@
+.skills-section{
+    margin-top: 2rem;
+}
+
+.skills-content{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.skill {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.skill-label {
+    font-weight: bold;
+    font-size:large;
+}
+
+@media screen and (max-width: 767px){
+
+    .skills-section{
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .skills-content{
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+}
