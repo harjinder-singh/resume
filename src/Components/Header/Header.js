@@ -12,13 +12,13 @@ function Header() {
             <Navbar.Brand href="/">Harjinder Singh</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
             <Navbar.Offcanvas
-                id="offcanvasNavbar-expand-md"
-                aria-labelledby="offcanvasNavbarLabel-expand-md"
+                id="offcanvasNavbar-expand--md"
+                aria-labelledby="offcanvasNavbarLabel-expand--md"
                 placement="end"
             >
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-                    Select Choice
+                    <Offcanvas.Title id="offcanvasNavbarLabel-expand--md">
+                        Select Choice
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
