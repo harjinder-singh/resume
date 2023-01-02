@@ -5,14 +5,18 @@ import './App.css';
 import Header from './Components/Header/Header';
 import AboutMe from './Components/AboutMe/AboutMe';
 import Skills from './Components/Skills/Skills';
+import Education from './Components/Education/Education';
+import Experience from './Components/Experience/Experience';
 
 function App() {
   return (
     <Fragment>
       <Header></Header>
       <div className='main'>
-        <AboutMe></AboutMe>
-        <Skills></Skills>
+        <AboutMe />
+        <Skills />
+        <Education />
+        <Experience />
       </div>
     </Fragment>
   );
