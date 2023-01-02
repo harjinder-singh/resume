@@ -7,7 +7,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 function Header() {
   return (
     <Fragment>
-        <Navbar key="md" bg="dark" variant="dark" expand="md" className="mb-3">
+        <Navbar key="md" bg="dark" variant="dark" expand="md">
             <Container>
             <Navbar.Brand href="/">Harjinder Singh</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />

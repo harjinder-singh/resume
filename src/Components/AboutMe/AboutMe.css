@@ -24,6 +24,28 @@
     text-align: justify;
 }
 
+@media screen and (max-width: 900px){
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bio-detail {
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+
+    .bio {
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        margin-top: 1rem;
+    }
+
+}
+
 @media screen and (max-width: 767px){
 
     .profile-container {
@@ -33,7 +55,6 @@
 
     .bio-detail {
         font-size: 1rem;
-        text-align: justify;
     }
 
     .bio {
