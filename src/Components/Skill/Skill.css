@@ -4,12 +4,13 @@
     gap: 0.5rem;
     align-items: center;
     padding: 0.5rem;
+    justify-content: space-around;
 }
 
 .skill-label {
     font-family: sans-serif;
     font-weight: 500;
-    font-size: larger;
+    font-size: large;
     margin: 0;
 }
 
@@ -21,6 +22,10 @@
 @media screen and (max-width: 900px) {
     span > svg {
         transform: scale(1.5)
+    }
+
+    .skill-label {
+        font-size: 1.4rem;
     }
 
     .skill {

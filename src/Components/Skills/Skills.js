@@ -11,6 +11,9 @@ let skills = [
     { id: 7, skill: "CSS", type: "language", stars: 2 },
     { id: 8, skill: "Ruby", type: "language", stars: 2 },
     { id: 9, skill: "RestApi's", type: "service", stars: 3 },
+    { id: 10, skill: "DynamoDB", type: "database", stars: 3 },
+    { id: 11, skill: "MongoDB", type: "database", stars: 3 },
+    { id: 12, skill: "Express", type: "library", stars: 2 },
 
 ]
 
