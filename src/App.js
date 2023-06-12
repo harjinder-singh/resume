@@ -7,6 +7,7 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import Skills from './Components/Skills/Skills';
 import Education from './Components/Education/Education';
 import Experience from './Components/Experience/Experience';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Skills />
         <Education />
         <Experience />
+        <Contact />
       </div>
     </Fragment>
   );
