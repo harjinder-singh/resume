@@ -1,0 +1,39 @@
+.education-section{
+    margin-top: 2rem;
+}
+
+.education-content {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: justify;
+    padding-left: 1rem;
+}
+
+@media screen and (max-width: 900px){
+
+    .education-section{
+        margin-top: 0;
+        padding: 1rem;
+    }
+
+    .education-content {
+        font-size: 1.4rem;
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 767px){
+
+    .education-section{
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .education-content {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+}

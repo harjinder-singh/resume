@@ -1,0 +1,59 @@
+.skill {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: space-around;
+}
+
+.skill-label {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: large;
+    margin: 0;
+}
+
+.skill-value {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    span > svg {
+        transform: scale(1.5)
+    }
+
+    .skill-label {
+        font-size: 1.4rem;
+    }
+
+    .skill {
+        max-width: 100%;
+        justify-content: space-between;
+    }
+
+    .skill-value {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    span > svg {
+        transform: scale(0.8)
+    }
+
+    .skill-label {
+        font-size: 1rem;
+    }
+
+    .skill {
+        max-width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    }
+
+    .skill-value {
+        gap: 0;
+    }
+}
