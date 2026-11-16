@@ -1,59 +1,34 @@
 .skill {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 0.5rem;
-    justify-content: space-around;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--heading);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.skill-label {
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: large;
-    margin: 0;
+.skill:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-.skill-value {
-    display: flex;
-    gap: 0.5rem;
+.skill-meter {
+  display: inline-flex;
+  gap: 3px;
 }
 
-@media screen and (max-width: 900px) {
-    span > svg {
-        transform: scale(1.5)
-    }
-
-    .skill-label {
-        font-size: 1.4rem;
-    }
-
-    .skill {
-        max-width: 100%;
-        justify-content: space-between;
-    }
-
-    .skill-value {
-        gap: 1rem;
-    }
+.skill-bar {
+  width: 6px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--border);
 }
 
-@media screen and (max-width: 767px) {
-    span > svg {
-        transform: scale(0.8)
-    }
-
-    .skill-label {
-        font-size: 1rem;
-    }
-
-    .skill {
-        max-width: 100%;
-        justify-content: space-between;
-        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
-    }
-
-    .skill-value {
-        gap: 0;
-    }
+.skill-bar.filled {
+  background: var(--gradient);
 }

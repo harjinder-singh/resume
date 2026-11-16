@@ -1,7 +1,8 @@
+import { Braces, Diagram3, Database, Window } from "react-bootstrap-icons";
 import "./Skills.css";
 import Skill from "../Skill/Skill";
 
-let skills = [
+const skills = [
   { id: 1, skill: "ReactJs", type: "framework", stars: 3 },
   { id: 2, skill: "Angular2+", type: "framework", stars: 3 },
   { id: 3, skill: "Spring", type: "framework", stars: 2 },
@@ -19,24 +20,54 @@ let skills = [
   { id: 15, skill: "Express", type: "library", stars: 2 },
 ];
 
-const Skills = () => {
-  const getSkills = () => {
-    return (
-      <>
-        {skills.map((el) => (
-          <Skill key={el.id} label={el.skill} score={el.stars} />
-        ))}
-      </>
-    );
-  };
+const groups = [
+  { title: "Languages", icon: Braces, types: ["language"] },
+  { title: "Frameworks & Libraries", icon: Window, types: ["framework", "library"] },
+  { title: "APIs & Services", icon: Diagram3, types: ["service"] },
+  { title: "Databases", icon: Database, types: ["database"] },
+];
 
-  return (
-    <section className="skills-section" id="skills">
-      <h1>Skills</h1>
-      <hr />
-      <div className="skills-content">{getSkills()}</div>
-    </section>
-  );
-};
+const Skills = () => (
+  <section className="section" id="skills">
+    <div className="section-header reveal">
+      <span className="section-eyebrow">What I work with</span>
+      <h2 className="section-title">Skills &amp; Technologies</h2>
+    </div>
+    <div className="skills-grid">
+      {groups.map(({ title, icon: Icon, types }) => (
+        <article key={title} className="card skill-group reveal">
+          <header className="skill-group-header">
+            <span className="skill-group-icon">
+              <Icon size={20} />
+            </span>
+            <h3>{title}</h3>
+          </header>
+          <ul className="skill-list">
+            {skills
+              .filter((el) => types.includes(el.type))
+              .sort((a, b) => b.stars - a.stars)
+              .map((el) => (
+                <Skill key={el.id} label={el.skill} score={el.stars} />
+              ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+    <p className="skills-legend reveal">
+      <span className="skill-meter">
+        <span className="skill-bar filled" />
+        <span className="skill-bar filled" />
+        <span className="skill-bar filled" />
+      </span>
+      Expert
+      <span className="skill-meter">
+        <span className="skill-bar filled" />
+        <span className="skill-bar filled" />
+        <span className="skill-bar" />
+      </span>
+      Proficient
+    </p>
+  </section>
+);
 
 export default Skills;
