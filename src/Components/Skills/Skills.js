@@ -1,4 +1,4 @@
-import { Braces, Diagram3, Database, Window } from "react-bootstrap-icons";
+import { Braces, Cloud, Cpu, Diagram3, Database, Window } from "react-bootstrap-icons";
 import "./Skills.css";
 import Skill from "../Skill/Skill";
 
@@ -18,9 +18,18 @@ const skills = [
   { id: 13, skill: "DynamoDB", type: "database", stars: 3 },
   { id: 14, skill: "MongoDB", type: "database", stars: 3 },
   { id: 15, skill: "Express", type: "library", stars: 2 },
+  { id: 16, skill: "LLM Integration", type: "ai", stars: 2 },
+  { id: 17, skill: "Prompt Engineering", type: "ai", stars: 2 },
+  { id: 18, skill: "AI-powered Apps", type: "ai", stars: 2 },
+  { id: 19, skill: "AWS", type: "cloud", stars: 2 },
+  { id: 20, skill: "GCP", type: "cloud", stars: 2 },
+  { id: 21, skill: "Azure", type: "cloud", stars: 2 },
+  { id: 22, skill: "CI/CD", type: "cloud", stars: 3 },
 ];
 
 const groups = [
+  { title: "AI & LLMs", icon: Cpu, types: ["ai"] },
+  { title: "Cloud & DevOps", icon: Cloud, types: ["cloud"] },
   { title: "Languages", icon: Braces, types: ["language"] },
   { title: "Frameworks & Libraries", icon: Window, types: ["framework", "library"] },
   { title: "APIs & Services", icon: Diagram3, types: ["service"] },

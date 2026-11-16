@@ -1,15 +1,14 @@
 import { ArrowRight, Envelope, Github, GeoAlt } from "react-bootstrap-icons";
 import moment from "moment";
 import profile from "../../profile.jpeg";
+import jobs from "../../data/jobs";
 import "./AboutMe.css";
 
 const getExperience = () => {
-  //Enbake exp
-  let diff = moment([2019, 3, 15]).diff(moment([2013, 6, 1]));
-  //Rest Exp
-  diff += moment(Date.now()).diff(moment([2020, 6, 8]));
-
-  const totalMonths = Math.floor(moment.duration(diff).asMonths());
+  const totalMonths = jobs.reduce((total, { start, end }) => {
+    const endDate = end ? moment(end) : moment();
+    return total + endDate.diff(moment(start), "months") + 1;
+  }, 0);
   return { years: Math.floor(totalMonths / 12), months: totalMonths % 12 };
 };
 
@@ -23,7 +22,7 @@ const AboutMe = () => {
 
   const stats = [
     { value: `${years}+`, label: "Years experience" },
-    { value: "4", label: "Companies" },
+    { value: `${jobs.length}`, label: "Companies" },
     { value: "3", label: "Cloud platforms" },
   ];
 
@@ -31,23 +30,25 @@ const AboutMe = () => {
     <section className="hero" id="aboutMe">
       <div className="hero-content reveal">
         <span className="hero-badge">
-          <span className="pulse-dot" /> Senior Software Engineer @ Infosys
+          <span className="pulse-dot" /> Building AI products @ {jobs[0].company}
         </span>
         <h1 className="hero-title">
           Hi, I'm Harjinder.
           <br />
-          <span className="gradient-text">Full Stack Software Developer</span>
+          <span className="gradient-text">Full Stack &amp; AI Software Engineer</span>
         </h1>
         <p className="hero-location">
           <GeoAlt /> Canada
         </p>
         <p className="hero-bio">
-          {experienceText} of experience working with JavaScript, NodeJS,
-          Angular, React, Python, Java and many modern languages. Advanced
-          experience with SQL and NoSQL databases and major web frameworks like
-          Spring, Spring Boot and Ruby on Rails. Post Graduate Diploma in Cloud
-          Computing for Big Data, with hands-on experience deploying to AWS, GCP
-          and Azure and building CI/CD pipelines.
+          Software engineer with {experienceText} of experience building
+          production web applications end to end, now focused on AI. At{" "}
+          {jobs[0].company} I work on AI projects, bringing large language
+          models into real products. My toolkit spans JavaScript, TypeScript,
+          React, Angular, Node.js, Python and Java, plus SQL and NoSQL databases
+          and frameworks like Spring Boot and Ruby on Rails. I also hold a Post
+          Graduate Diploma in Cloud Computing for Big Data and have shipped on
+          AWS, GCP and Azure with CI/CD pipelines.
         </p>
         <div className="hero-actions">
           <a href="#contact" className="btn btn-primary">

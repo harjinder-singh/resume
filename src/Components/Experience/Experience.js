@@ -1,33 +1,9 @@
 import { Briefcase } from "react-bootstrap-icons";
+import moment from "moment";
+import jobs from "../../data/jobs";
 import "./Experience.css";
 
-const jobs = [
-  {
-    role: "Senior Software Engineer",
-    company: "Infosys",
-    location: "Canada",
-    period: "Nov 2022 – Present",
-    current: true,
-  },
-  {
-    role: "Senior Software Engineer",
-    company: "Epam Systems",
-    location: "Canada",
-    period: "Jun 2021 – Sep 2022",
-  },
-  {
-    role: "Full Stack Software Developer",
-    company: "Distapps Inc.",
-    location: "Canada",
-    period: "Sep 2020 – Jun 2021",
-  },
-  {
-    role: "Software Engineer",
-    company: "Enbake Consulting Pvt. Ltd",
-    location: "India",
-    period: "Jun 2013 – Mar 2019",
-  },
-];
+const formatDate = (date) => (date ? moment(date).format("MMM YYYY") : "Present");
 
 const Experience = () => (
   <section className="section" id="experience">
@@ -38,17 +14,19 @@ const Experience = () => (
     <ol className="timeline">
       {jobs.map((job) => (
         <li key={job.company} className="timeline-item reveal">
-          <span className={`timeline-dot ${job.current ? "current" : ""}`}>
+          <span className={`timeline-dot ${job.end ? "" : "current"}`}>
             <Briefcase size={14} />
           </span>
           <article className="card timeline-card">
             <div className="timeline-meta">
-              <span className="timeline-period">{job.period}</span>
-              {job.current && <span className="tag">Current</span>}
+              <span className="timeline-period">
+                {formatDate(job.start)} – {formatDate(job.end)}
+              </span>
+              {!job.end && <span className="tag">Current</span>}
             </div>
             <h3>{job.role}</h3>
             <p className="timeline-company">
-              {job.company} · {job.location}
+              {[job.company, job.location].filter(Boolean).join(" · ")}
             </p>
           </article>
         </li>

@@ -6,7 +6,7 @@ test("renders the portfolio sections", () => {
   expect(
     screen.getByRole("heading", {
       level: 1,
-      name: /full stack software developer/i,
+      name: /ai software engineer/i,
     })
   ).toBeInTheDocument();
   ["Skills & Technologies", "Work Experience", "Education"].forEach((title) =>
