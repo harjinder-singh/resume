@@ -175,3 +175,13 @@
     padding: 1.25rem;
   }
 }
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .bg-decor {
+    display: none;
+  }
+}
