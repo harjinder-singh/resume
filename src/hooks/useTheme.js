@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "theme";
 
 const getInitialTheme = () => {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === "light" || stored === "dark") return stored;
+  } catch {}
   return window.matchMedia?.("(prefers-color-scheme: light)").matches
     ? "light"
     : "dark";
@@ -15,7 +17,9 @@ const useTheme = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {}
   }, [theme]);
 
   const toggleTheme = () =>
