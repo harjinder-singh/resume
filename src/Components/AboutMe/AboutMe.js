@@ -5,10 +5,14 @@ import jobs from "../../data/jobs";
 import "./AboutMe.css";
 
 const getExperience = () => {
-  const totalMonths = jobs.reduce((total, { start, end }) => {
+  const workedMonths = new Set();
+  jobs.forEach(({ start, end }) => {
     const endDate = end ? moment(end) : moment();
-    return total + endDate.diff(moment(start), "months") + 1;
-  }, 0);
+    for (const m = moment(start); !m.isAfter(endDate, "month"); m.add(1, "month")) {
+      workedMonths.add(m.format("YYYY-MM"));
+    }
+  });
+  const totalMonths = workedMonths.size;
   return { years: Math.floor(totalMonths / 12), months: totalMonths % 12 };
 };
 
